@@ -30,11 +30,7 @@ const read = (req, res) => {
 
 const edit = (req, res) => {
   const user = req.body;
-
-  // TODO validations (length, format...)
-
   const id = parseInt(req.params.id, 10);
-
   models.user
     .update(user, id)
     .then(([result]) => {
@@ -52,9 +48,6 @@ const edit = (req, res) => {
 
 const add = (req, res) => {
   const user = req.body;
-
-  // TODO validations (length, format...)
-
   models.user
     .insert(user)
     .then(([result]) => {
@@ -82,10 +75,29 @@ const destroy = (req, res) => {
     });
 };
 
+const authenticationCheck = (req, res, next) => {
+  const { mail } = req.body;
+  models.user
+    .getUserByEmail(mail)
+    .then(([users]) => {
+      if (users[0] != null) {
+        [req.user] = users;
+        next();
+      } else {
+        res.sendStatus(401);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error retrieving data from database");
+    });
+};
+
 module.exports = {
   browse,
   read,
   edit,
   add,
   destroy,
+  authenticationCheck,
 };
