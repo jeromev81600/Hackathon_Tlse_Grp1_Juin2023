@@ -36,6 +36,7 @@ const RamManager = require("./RamManager");
 const StorageManager = require("./StorageManager");
 const NetworkManager = require("./NetworkManager");
 const BrandManager = require("./BrandManager");
+const ModelManager = require("./ModelManager");
 
 models.item = new ItemManager();
 models.item.setDatabase(pool);
@@ -57,6 +58,9 @@ models.network.setDatabase(pool);
 
 models.brand = new BrandManager();
 models.brand.setDatabase(pool);
+
+models.model = new ModelManager();
+models.model.setDatabase(pool);
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 

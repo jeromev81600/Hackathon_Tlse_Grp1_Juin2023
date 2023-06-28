@@ -9,6 +9,7 @@ const RamControllers = require("./controllers/RamControllers");
 const StorageControllers = require("./controllers/StorageControllers");
 const NetworkControllers = require("./controllers/NetworkControllers");
 const BrandControllers = require("./controllers/BrandControllers");
+const ModelControllers = require("./controllers/ModelControllers");
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
@@ -55,5 +56,11 @@ router.get("/brand/id", BrandControllers.read);
 router.put("/brand/:id", BrandControllers.edit);
 router.post("/brand", BrandControllers.add);
 router.delete("/brand/:id", BrandControllers.destroy);
+
+router.get("/model", ModelControllers.browse);
+router.get("/model/:id", ModelControllers.read);
+router.put("/model/:id", ModelControllers.edit);
+router.post("/model", ModelControllers.add);
+router.delete("/model/:id", ModelControllers.destroy);
 
 module.exports = router;
