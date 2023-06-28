@@ -29,19 +29,27 @@ pool.getConnection().catch(() => {
 
 const models = {};
 
-const ItemManager = require("./ItemManager");
 const UserManager = require("./UserManager");
+const SmartphoneManager = require("./SmartphoneManager");
+const ScreenManager = require("./ScreenManager");
+const OSManager = require("./OSManager");
 const WeightingManager = require("./WeightingManager");
 const RamManager = require("./RamManager");
 const StorageManager = require("./StorageManager");
 const NetworkManager = require("./NetworkManager");
 const BrandManager = require("./BrandManager");
 
-models.item = new ItemManager();
-models.item.setDatabase(pool);
-
 models.user = new UserManager();
 models.user.setDatabase(pool);
+
+models.smartphone = new SmartphoneManager();
+models.smartphone.setDatabase(pool);
+
+models.screen = new ScreenManager();
+models.screen.setDatabase(pool);
+
+models.operatingSystem = new OSManager();
+models.operatingSystem.setDatabase(pool);
 
 models.weighting = new WeightingManager();
 models.weighting.setDatabase(pool);
@@ -57,6 +65,7 @@ models.network.setDatabase(pool);
 
 models.brand = new BrandManager();
 models.brand.setDatabase(pool);
+
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 
