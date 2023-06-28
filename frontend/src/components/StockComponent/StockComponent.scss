@@ -1,0 +1,37 @@
+/* Styles pour les fiches individuelles des téléphones */
+.phone-card {
+  border: 1px solid var(--text);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.phone-card p {
+  margin-bottom: 5px;
+  font-family: var(--fontFamilyText);
+  color: var(--text);
+  margin: 10px;
+  font-size: 0.7rem;
+}
+
+.info {
+}
+
+.phone-card .has-charger {
+  height: 50px;
+  width: 50px;
+  background: url("../../assets/image/charger.svg") no-repeat center center;
+}
+
+.phone-card .no-charger {
+  height: 50px;
+  width: 50px;
+  background: url("../../assets/image/no-chargeur.svg") no-repeat center center;
+}
+
+.photo {
+  height: 100px;
+  width: 100px;
+}

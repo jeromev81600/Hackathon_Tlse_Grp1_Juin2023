@@ -26,13 +26,13 @@ router.get("/user/:id", UserControllers.read);
 router.get("/weighting", WeightingControllers.browse);
 router.get("/weighting/:id", WeightingControllers.read);
 router.get("/storage", StorageControllers.browse);
-router.get("/storage/id", StorageControllers.read);
+router.get("/storage/:id", StorageControllers.read);
 router.get("/ram", RamControllers.browse);
 router.get("/ram/:id", RamControllers.read);
 router.get("/network", NetworkControllers.browse);
-router.get("/network/id", NetworkControllers.read);
+router.get("/network/:id", NetworkControllers.read);
 router.get("/brand", BrandControllers.browse);
-router.get("/brand/id", BrandControllers.read);
+router.get("/brand/:id", BrandControllers.read);
 router.get("/model", ModelControllers.browse);
 router.get("/model/:id", ModelControllers.read);
 
