@@ -10,7 +10,7 @@
   font-size: x-large;
   font-weight: bolder;
   width: 250px;
-  height: 70px;
+  height: 60px;
   padding: 0 64px 0 0;
   p {
     margin: auto;
@@ -63,6 +63,15 @@
 }
 
 @media screen and (min-width: 768px) {
+  .header-text {
+    width: 800px;
+    height: 60px;
+    justify-content: left;
+    p {
+      margin: auto auto auto 4rem;
+      font-size: 32px;
+    }
+  }
   .img-not-found {
     width: 570px;
     height: 570px;
@@ -71,8 +80,19 @@
   }
 
   .title404 {
+    text-align: right;
+    margin: 30vh 30%;
+    font-size: 3rem;
+  }
+  .text404 {
+    width: fit-content;
     position: absolute;
-    right: 20rem;
-    top: 20vh;
+    right: 10rem;
+    
+    p {
+        display: block;     
+        font-size: 24px;  
+       
+    }
   }
 }
