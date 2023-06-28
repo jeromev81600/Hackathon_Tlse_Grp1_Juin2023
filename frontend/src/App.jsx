@@ -1,4 +1,5 @@
 import Home from "./pages/Home";
+import NotFoundPage from "./pages/NotFoundPage";
 
 import "./App.scss";
 import "./reset.scss";
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <Home />
       <p>coucou</p>
+      <NotFoundPage />
     </div>
   );
 }
