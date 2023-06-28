@@ -31,6 +31,11 @@ const models = {};
 
 const ItemManager = require("./ItemManager");
 const UserManager = require("./UserManager");
+const WeightingManager = require("./WeightingManager");
+const RamManager = require("./RamManager");
+const StorageManager = require("./StorageManager");
+const NetworkManager = require("./NetworkManager");
+const BrandManager = require("./BrandManager");
 
 models.item = new ItemManager();
 models.item.setDatabase(pool);
@@ -38,6 +43,20 @@ models.item.setDatabase(pool);
 models.user = new UserManager();
 models.user.setDatabase(pool);
 
+models.weighting = new WeightingManager();
+models.weighting.setDatabase(pool);
+
+models.ram = new RamManager();
+models.ram.setDatabase(pool);
+
+models.storage = new StorageManager();
+models.storage.setDatabase(pool);
+
+models.network = new NetworkManager();
+models.network.setDatabase(pool);
+
+models.brand = new BrandManager();
+models.brand.setDatabase(pool);
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 
