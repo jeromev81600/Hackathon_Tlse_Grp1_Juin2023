@@ -374,7 +374,7 @@ VALUES (
         1,
         1,
         1,
-        500.00,
+        30.00,
         ' https: / / icons.veryicon.com / png / o / miscellaneous / bitisland - world / iphone -42. png '
     ), (
         2,
@@ -391,6 +391,6 @@ VALUES (
         2,
         2,
         2,
-        800.00,
+        40.00,
         "https://download.logo.wine/logo/Samsung/Samsung-Logo.wine.png"
     );
