@@ -10,7 +10,6 @@ function App() {
     <div className="App">
       <Home />
       <StockPhones />
-      <p>coucou</p>
     </div>
   );
 }

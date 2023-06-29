@@ -24,6 +24,13 @@ function StockPhones() {
         );
         const modelName = modelResponse.data.model;
         phone.model_name = modelName;
+
+        // eslint-disable-next-line no-await-in-loop
+        const userResponse = await axios.get(
+          `http://localhost:5000/user/${phone.user_id}`
+        );
+        const factoryName = userResponse.data.factory;
+        phone.factory = factoryName;
       }
 
       setPhones(fetchedPhones);
@@ -38,8 +45,8 @@ function StockPhones() {
 
   return (
     <div>
-      <h1>Stock de smartphones</h1>
       <ul>
+        A
         {phones.map((phone) => (
           <li key={phone.id}>
             <div className="phone-card">
@@ -49,7 +56,8 @@ function StockPhones() {
               <div className="info">
                 <p>Marque : {phone.brand_name}</p>
                 <p className="label">Modèle : {phone.model_name}</p>
-                <p>Prix : {phone.price}</p>{" "}
+                <p>Prix : {phone.price}</p>
+                <p>Lieu : {phone.factory}</p> {/* Display factory name */}
               </div>
               <p
                 className={`charger ${
