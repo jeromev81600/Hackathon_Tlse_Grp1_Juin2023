@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import Navbar from "../Navbarold/Navbar";
+import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import "./Calculator.scss";
 
