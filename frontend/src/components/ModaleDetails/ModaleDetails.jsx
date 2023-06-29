@@ -1,51 +1,47 @@
-/* eslint-disable no-await-in-loop */
-import axios from "axios";
-import { useEffect } from "react";
+/* eslint-disable camelcase */
+import { useContext, useEffect } from "react";
+import DetailsPhoneContext from "../../contexts/DetailsPhoneContext";
 
 function ModaleDetails() {
-  //   const [phones, setPhones] = useState([]);
-
-  const fetchStockPhones = async () => {
+  const { id, smartphone, setSmartphone } = useContext(DetailsPhoneContext);
+  const fetchSmartphoneDetails = async () => {
     try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/smartphone`
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/smartphone/${id}`
       );
-      const fetchedPhones = response.data;
-
-      for (const phone of fetchedPhones) {
-        // eslint-disable-next-line no-await-in-loop
-        const modelResponse = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/model/${phone.model_id}`
-        );
-        const modelName = modelResponse.data.model;
-        phone.model_name = modelName;
-
-        const idResponse = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/model/${phone.id}`
-        );
-        const modelId = idResponse.data.id;
-        phone.model_id = modelId;
-
-        const userResponse = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/user/${phone.user_id}`
-        );
-        const factoryName = userResponse.data.factory;
-        phone.factory = factoryName;
-      }
-
-      //   setPhones(fetchedPhones);
+      const data = await response.json();
+      setSmartphone(data);
     } catch (error) {
-      console.error(error);
+      console.error(
+        "Erreur lors de la récupération des détails du smartphone:",
+        error
+      );
     }
   };
-
   useEffect(() => {
-    fetchStockPhones();
-  }, []);
+    fetchSmartphoneDetails();
+  }, [id]);
 
+  console.info(smartphone, id);
   return (
-    <div>
-      <h1>coucou</h1>
+    <div className="modal-phone-details">
+      <h2>{smartphone.brand}</h2>
+      <img src={smartphone.url_logo} alt={smartphone.brand} />
+
+      <h3>Model: {smartphone.model}</h3>
+      <p>Operating System: {smartphone.operating_system}</p>
+      <p>Screen: {smartphone.screen}</p>
+      <p>Network: {smartphone.network}</p>
+      <p>Storage: {smartphone.storage}</p>
+      <p>RAM: {smartphone.ram}</p>
+      <p>Weighting: {smartphone.weighting}</p>
+      <p>State: {smartphone.state}</p>
+      <p>Price: {smartphone.price}</p>
+      <img
+        src={smartphone.url_phone}
+        alt={smartphone.brand}
+        className="imgPhone"
+      />
     </div>
   );
 }

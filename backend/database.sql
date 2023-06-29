@@ -78,7 +78,7 @@ CREATE TABLE
     IF NOT EXISTS `hackathon2`.`brand` (
         `id` INT NOT NULL AUTO_INCREMENT,
         `brand` VARCHAR(45) NOT NULL,
-        `url_logo` VARCHAR(255) NULL,
+        `url_logo` LONGTEXT NULL,
         PRIMARY KEY (`id`)
     ) ENGINE = InnoDB;
 
@@ -88,15 +88,18 @@ CREATE TABLE
 
 -- -----------------------------------------------------
 
-INSERT INTO
-    `hackathon2`.`brand` (brand, url_logo)
-VALUES (
-        'Brand A',
-        'https://example.com/logo_brand_a.png'
-    ), (
-        'Brand B',
-        'https://example.com/logo_brand_b.png'
-    );
+INSERT INTO `hackathon2`.`brand` (brand, url_logo)
+VALUES 
+    ('Apple', 'https://www.1min30.com/wp-content/uploads/2019/02/Le-logo-Apple.jpg'),
+    ('Samsung', 'https://fr.vecteezy.com/png/19017544-logo-transparent-samsung-png'),
+    ('Huawei', 'https://fr.vecteezy.com/png/19909399-huawei-transparent-png-huawei-gratuit-png'),
+    ('Google', 'https://www.frandroid.com/marques/google/380882_g-pixel-phone-google-souhaite-changer-nom-de-futurs-smartphones'),
+    ('Xiaomi', 'https://fr.wikipedia.org/wiki/Xiaomi'),
+    ('Sony', 'https://www.pngwing.com/en/search?q=xperia+Logo'),
+    ('LG', 'https://fr.vecteezy.com/art-vectoriel/18911404-lg-logo-life-s-good-vecteur-editorial'),
+    ('Motorola', 'https://images.frandroid.com/wp-content/uploads/2013/06/motorola_logo.jpeg'),
+    ('Nokia', 'https://geekattitu.de/2014/06/18/en-2008-nokia-a-paye-une-rancon-de-plusieurs-millions-deuros-pour-proteger-symbian/');
+ 
 
 -- -----------------------------------------------------
 

@@ -25,7 +25,6 @@ export default function NotFoundPage() {
           , vous retournerez à la page principale
         </p>
       </section>
-
       <Footer />
     </>
   );
