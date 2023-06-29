@@ -25,7 +25,7 @@ router.post("/login", UserControllers.authenticationCheck, verifyPassword);
 // ----------------------------------------- Users routes -------------------------------------------
 
 router.get("/smartphone", SmartphoneControllers.browse);
-router.get("/smartphone/:id", SmartphoneControllers.read);
+router.get("/smartphone/:id", SmartphoneControllers.smartphoneDetails);
 router.get("/screen", ScreenControllers.browse);
 router.get("/screen/:id", ScreenControllers.read);
 router.get("/operatingsystem", OSControllers.browse);
