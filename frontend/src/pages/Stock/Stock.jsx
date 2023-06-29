@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useMediaQuery } from "@material-ui/core";
 import StockPhones from "../../components/StockComponent/StockComponent";
 import Filters from "../../components/Filters/Filters";
-import Navbar from "../../components/Navbarold/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import "./Stock.scss";
 
