@@ -74,11 +74,10 @@
 @media screen and (min-width: 768px) {
   .container-404 {
     flex-direction: row;
-    justify-content: flex-start;
-    margin: 4rem;
+    gap: 10rem;
   }
   .header-text {
-    width: 800px;
+    width: 900px;
     height: 60px;
     justify-content: left;
     p {
@@ -99,8 +98,6 @@
 
   .text404 {
     width: fit-content;
-    // position: absolute;
-    // right: 10rem;
 
     p {
       display: block;

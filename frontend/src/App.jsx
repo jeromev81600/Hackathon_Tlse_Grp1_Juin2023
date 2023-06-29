@@ -1,5 +1,4 @@
-import Home from "./pages/Home";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import Home from "./pages/Home/Home";
 
 import "./App.scss";
 import "./reset.scss";
@@ -8,8 +7,6 @@ function App() {
   return (
     <div className="App">
       <Home />
-      <p>coucou</p>
-      <NotFoundPage />
     </div>
   );
 }
