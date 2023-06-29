@@ -295,10 +295,7 @@ INSERT INTO
         cost_weighting,
         state
     )
-VALUES (1, 10, 'REPARABLE'), (2, 20, 'BLOQUE'), (
-        3,
-        30,
-        'RECONDITIONNE);
+VALUES (1, 10, 'REPARABLE'), (2, 20, 'BLOQUE'), (3, 30, 'RECONDITIONNE');
 
 -- -----------------------------------------------------
 
