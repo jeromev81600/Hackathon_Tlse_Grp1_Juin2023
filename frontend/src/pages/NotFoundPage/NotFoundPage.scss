@@ -1,9 +1,6 @@
 .header-text {
   display: flex;
-  position: absolute;
-  right: 0;
-  align-items: center;
-  justify-content: right;
+  margin-left: auto;
   background-color: #00acb0;
   border-radius: 34px 0 0 34px;
   color: white;
@@ -47,10 +44,9 @@
   flex-direction: column;
   gap: 3rem;
   padding: 1rem;
+  margin-bottom: 9rem;
   p {
-    display: block;
     font-size: 1.2rem;
-    margin: auto;
     line-height: 2rem;
     font-family: var(--fontFamilyText);
   }
@@ -59,46 +55,41 @@
     text-decoration: none;
     font-weight: bolder;
   }
-
-  .emoji-sad {
-    background-image: url("../../assets/image/emoji-sad.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 1.5rem;
-    height: 1.5rem;
-    margin: -1.9rem 60px auto auto;
-  }
 }
 
 @media screen and (min-width: 768px) {
-  .container-404 {
-    flex-direction: row;
-    gap: 10rem;
-  }
   .header-text {
     width: 900px;
     height: 60px;
     justify-content: left;
     p {
       margin: auto auto auto 4rem;
-      font-size: 32px;
+      font-size: 40px;
     }
   }
+  .container-404 {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
   .img-not-found {
     width: 570px;
     height: 570px;
-    margin: 10rem 0 0 10rem;
+    margin: inherit;
+
   }
 
   .title404 {
-    margin: auto;
     font-size: 3rem;
+    display: flex;
+    align-items: center;
   }
 
   .text404 {
+    display: flex;
+    align-items: stretch;
     width: fit-content;
-
+    margin-left: auto;
     p {
       display: block;
       font-size: 24px;

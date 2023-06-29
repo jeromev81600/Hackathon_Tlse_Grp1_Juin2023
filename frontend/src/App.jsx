@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import PasswordReset from "./pages/PasswordReset";
 import Dashboard from "./pages/EspaceAdmin/EspaceAdmin";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import "./App.scss";
 import "./reset.scss";
 
@@ -20,6 +21,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/reset" element={<PasswordReset />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/not-found" element={<NotFoundPage />} />
           </Routes>
         </Router>
       </AuthFunctionProvider>

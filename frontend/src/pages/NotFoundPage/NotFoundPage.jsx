@@ -1,9 +1,12 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Navbar from "../../components/NavBar/Navbar";
+import Footer from "../../components/Footer/Footer";
 import "./NotFoundPage.scss";
 
 export default function NotFoundPage() {
   return (
     <>
+      <Navbar />
       <div className="header-text">
         <p>Ooops ...</p>
       </div>
@@ -12,19 +15,18 @@ export default function NotFoundPage() {
         <h1 className="title404">Erreur 404</h1>
       </div>
       <section className="text404">
-        <p>
-          La page que vous recherchez n'est pas disponible
-          <div className="emoji-sad" />
-        </p>
-        {/* <Link to="/"> Cliquer ici</Link> */}
+        <p>La page que vous recherchez n'est pas disponible</p>
         <p>
           En{" "}
-          <a href="/#" className="home-link">
+          <Link to="/" className="home-link">
+            {" "}
             cliquant ici
-          </a>
+          </Link>
           , vous retournerez à la page principale
         </p>
       </section>
+
+      <Footer />
     </>
   );
 }
