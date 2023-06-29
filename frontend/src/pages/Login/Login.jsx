@@ -1,6 +1,6 @@
 import React from "react";
-import Authentication from "../components/Authentication";
-import "../styles/Login.scss";
+import Authentication from "../../components/Authentication/Authentication";
+import "./Login.scss";
 
 export default function Login() {
   return (
