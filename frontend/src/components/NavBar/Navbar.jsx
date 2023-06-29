@@ -46,6 +46,7 @@ function Navbar() {
               </button>
             </div>
           </div>
+          <div className="sub-menu-blur" />
         </div>
       )}
     </div>
