@@ -1,5 +1,5 @@
 import Home from "./pages/Home";
-import NotFoundPage from "./pages/NotFoundPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 import "./App.scss";
 import "./reset.scss";

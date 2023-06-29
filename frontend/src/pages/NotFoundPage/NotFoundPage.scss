@@ -1,0 +1,110 @@
+.header-text {
+  display: flex;
+  position: absolute;
+  right: 0;
+  align-items: center;
+  justify-content: right;
+  background-color: #00acb0;
+  border-radius: 34px 0 0 34px;
+  color: white;
+  font-size: x-large;
+  font-weight: bolder;
+  width: 250px;
+  height: 60px;
+  padding: 0 64px 0 0;
+  p {
+    font-family: var(--fontFamilyTitle);
+    margin: auto;
+  }
+}
+.container-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.img-not-found {
+  background-image: url("../../assets/image/404.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  width: 300px;
+  position: relative;
+  margin: 5rem auto;
+}
+
+.title404 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  font-family: var(--fontFamilyText);
+}
+
+.text404 {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 1rem;
+  p {
+    display: block;
+    font-size: 1.2rem;
+    margin: auto;
+    line-height: 2rem;
+    font-family: var(--fontFamilyText);
+  }
+  a {
+    color: var(--primaryViolet);
+    text-decoration: none;
+    font-weight: bolder;
+  }
+
+  .emoji-sad {
+    background-image: url("../../assets/image/emoji-sad.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: -1.9rem 60px auto auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container-404 {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 4rem;
+  }
+  .header-text {
+    width: 800px;
+    height: 60px;
+    justify-content: left;
+    p {
+      margin: auto auto auto 4rem;
+      font-size: 32px;
+    }
+  }
+  .img-not-found {
+    width: 570px;
+    height: 570px;
+    margin: 10rem 0 0 10rem;
+  }
+
+  .title404 {
+    margin: auto;
+    font-size: 3rem;
+  }
+
+  .text404 {
+    width: fit-content;
+    // position: absolute;
+    // right: 10rem;
+
+    p {
+      display: block;
+      font-size: 24px;
+    }
+  }
+}
