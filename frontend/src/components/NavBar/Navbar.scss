@@ -1,0 +1,149 @@
+.global-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 85px;
+  padding: 15px 0px 15px 0px;
+  border-bottom: 2px solid var(--primaryWhite);
+
+  .logo-emmaus-navbar {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    img {
+      height: 90%;
+    }
+  }
+  .profil-and-menu-burger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    margin-right: 10px;
+    height: 100%;
+    .profil-navbar {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      img {
+        height: 70%;
+      }
+    }
+    .menu-burger {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      img {
+        height: 70%;
+      }
+    }
+  }
+  .main-sub-menu-burger {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 155px);
+    width: 100vw;
+    position: fixed;
+    top: 85px;
+    background-color: var(--thirdGray);
+
+    gap: 10px;
+
+    z-index: 2;
+    .sub-menu-burger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 40vh;
+      width: 80vw;
+      position: absolute;
+      right: 0;
+
+      background-color: var(--primaryWhite);
+      border-radius: 12px;
+      p {
+        margin-right: 20px;
+        color: var(--primaryWhite);
+        text-align: end;
+        font-family: var(--fontFamilyText);
+      }
+      .titles-sub-menu-burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-end;
+        gap: 20px;
+        margin: 10px 0px;
+        width: 100%;
+        p {
+          font-weight: bold;
+          font-size: large;
+        }
+      }
+
+      .title-one-sub-menu-burger {
+        background-color: var(--primaryYellow);
+        border-radius: 20px 0 0 20px;
+        padding: 10px 5px;
+        width: 95%;
+      }
+      .title-two-sub-menu-burger {
+        background-color: var(--primaryViolet);
+        border-radius: 20px 0 0 20px;
+        padding: 10px 5px;
+        width: 80%;
+      }
+      .title-three-sub-menu-burger {
+        background-color: var(--primaryBlue);
+        border-radius: 20px 0 0 20px;
+        padding: 10px 5px;
+        width: 65%;
+      }
+    }
+    .deconnected-sub-menu-burger {
+      display: flex;
+      justify-content: center;
+      margin: 20px 5px 10px 0px;
+      gap: 20px;
+
+      .deconnected {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        background-color: var(--primarywhite);
+        border: 1px solid var(--primaryGray);
+        border-radius: 20px;
+        padding: 5px;
+        box-shadow: 1px 2px 3px 1px var(--thirdGray);
+        img {
+          height: 80%;
+        }
+        p {
+          color: var(--primaryBlack);
+          font-weight: 500;
+        }
+      }
+    }
+    .sub-menu-blur {
+      width: 100vw;
+      height: 65vh;
+      background-color: var(--primaryBlack);
+    }
+  }
+}
+@media screen and (min-width: 769px) {
+  .global-navbar {
+    .profil-and-menu-burger {
+      .profil-navbar {
+        padding-right: 25px;
+      }
+      .menu-burger {
+        display: none;
+      }
+    }
+  }
+}
