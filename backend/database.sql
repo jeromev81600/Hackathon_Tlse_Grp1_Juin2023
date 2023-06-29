@@ -134,6 +134,7 @@ CREATE TABLE
     IF NOT EXISTS `hackathon2`.`operating_system` (
         `id` INT NOT NULL AUTO_INCREMENT,
         `operating_system` VARCHAR(45) NOT NULL,
+        `cost_operating_system` INT NOT NULL,
         PRIMARY KEY (`id`)
     ) ENGINE = InnoDB;
 
@@ -145,7 +146,7 @@ CREATE TABLE
 
 INSERT INTO
     `hackathon2`.`operating_system` (operating_system)
-VALUES ('OS A'), ('OS B'), ('OS C');
+VALUES ('Android 8', 20), ('Android 9', 25), ('Android 10', 30);
 
 -- -----------------------------------------------------
 
@@ -157,6 +158,7 @@ CREATE TABLE
     IF NOT EXISTS `hackathon2`.`screen` (
         `id` INT NOT NULL AUTO_INCREMENT,
         `screen` VARCHAR(45) NULL,
+        `cost_screen` INT NOT NULL,
         PRIMARY KEY (`id`)
     ) ENGINE = InnoDB;
 
@@ -168,7 +170,7 @@ CREATE TABLE
 
 INSERT INTO
     `hackathon2`.`screen` (screen)
-VALUES ('Screen A'), ('Screen B'), ('Screen C');
+VALUES ('HD', 30), ('Full HD', 40), ('Quad HD', 55), ('4K', 62);
 
 -- -----------------------------------------------------
 
@@ -180,6 +182,7 @@ CREATE TABLE
     IF NOT EXISTS `hackathon2`.`network` (
         `id` INT NOT NULL AUTO_INCREMENT,
         `network` INT NULL,
+        `cost_network` INT NOT NULL,
         PRIMARY KEY (`id`)
     ) ENGINE = InnoDB;
 
@@ -191,7 +194,7 @@ CREATE TABLE
 
 INSERT INTO
     `hackathon2`.`network` (network)
-VALUES (3), (4), (5);
+VALUES (3, 30), (4, 40), (5, 55);
 
 -- -----------------------------------------------------
 
@@ -215,7 +218,7 @@ CREATE TABLE
 
 INSERT INTO
     `hackathon2`.`storage` (storage, cost_storage)
-VALUES (64, 100), (128, 200), (256, 300);
+VALUES (16, 31), (32, 45), (64, 66), (128, 85), (256, 100), (512, 115), (1000, 125);
 
 -- -----------------------------------------------------
 
@@ -239,7 +242,7 @@ CREATE TABLE
 
 INSERT INTO
     `hackathon2`.`ram` (ram, cost_ram)
-VALUES (4, 50), (8, 100), (16, 200);
+VALUES (1, 30), (2, 40), (3, 54), (4, 62), (6, 78), (8, 90), (12, 114), (16, 136);
 
 -- -----------------------------------------------------
 
