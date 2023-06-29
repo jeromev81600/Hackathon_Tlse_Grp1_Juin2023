@@ -11,7 +11,7 @@ function Navbar() {
 
   return (
     <div className="global-navbar">
-      <div className="logo-emmaus-navbar">
+      <div className="logo-emmaus-navbar" id="home">
         <img src={logoEmmaus} alt="logo-emmaus-connect" />
       </div>
       <div className="dekstop-navbar-icons">
