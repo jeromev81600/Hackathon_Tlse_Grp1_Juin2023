@@ -31,9 +31,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
-    img {
-      height: 70%;
+    a {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      img {
+        height: 70%;
+      }
     }
   }
 }

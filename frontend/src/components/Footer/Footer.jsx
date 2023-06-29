@@ -9,16 +9,6 @@ import arrowUp from "../../assets/image/arrow-circle-up.svg";
 function Footer() {
   const [isVisible, setIsVisible] = useState(false);
 
-  const scrollToTop = () => {
-    if (isVisible) {
-      setIsVisible(true);
-    }
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <div className="global-footer">
       <div className="logo-footer">
@@ -33,9 +23,15 @@ function Footer() {
       </div>
       {!isVisible && (
         <div className="arrow-up">
-          <button type="button" className="arrow-up" onClick={scrollToTop()}>
-            <img src={arrowUp} alt="fleche-retour-en-haut" />
-          </button>
+          <a href="#home">
+            <button
+              type="button"
+              className="arrow-up"
+              onClick={() => setIsVisible(true)}
+            >
+              <img src={arrowUp} alt="fleche-retour-en-haut" />
+            </button>
+          </a>
         </div>
       )}
     </div>
