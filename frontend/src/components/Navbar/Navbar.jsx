@@ -42,23 +42,22 @@ function Navbar() {
           <div className="sub-menu-burger">
             <div className="titles-sub-menu-burger">
               <div className="title-one-sub-menu-burger">
-                <p>Ajouter un appareil</p>
+                <p>AJOUTER UN APPAREIL</p>
               </div>
               <div className="title-two-sub-menu-burger">
-                <p>Stock des appareils</p>
+                <p>STOCK DES APPAREILS</p>
               </div>
               <div className="title-three-sub-menu-burger">
-                <p>Profil</p>
+                <p>PROFIL</p>
               </div>
             </div>
             <div className="deconnected-sub-menu-burger">
               <button type="button" className="deconnected">
                 <img src={signout} alt="icon-sign-out" />
-                <p>Déconnexion</p>
+                <p>DÉCONNEXION</p>
               </button>
             </div>
           </div>
-          <div className="sub-menu-blur" />
         </div>
       )}
     </div>

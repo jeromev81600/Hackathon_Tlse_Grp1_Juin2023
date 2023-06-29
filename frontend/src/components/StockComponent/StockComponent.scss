@@ -58,44 +58,158 @@
   }
 
   @media (min-width: 768px) {
-    /* Taille de l'écran de tablette */
-    .phone-card ul {
-      display: table;
+    .table-container {
+      margin-top: 20px;
+    }
+
+    table {
       width: 100%;
       border-collapse: collapse;
+      font-size: 14px;
     }
 
-    .phone-card li {
-      display: table-row;
-    }
-
-    .phone-card li > div {
-      display: table-cell;
+    th {
+      background-color: #f2f2f2;
       padding: 10px;
-      border-bottom: 1px solid var(--text);
-      font-family: var(--fontFamilyText);
-      color: var(--text);
-      font-size: 0.7rem;
+      text-align: left;
+      font-weight: bold;
+      font-size: 2rem;
     }
 
-    .phone-card .has-charger,
-    .phone-card .no-charger {
-      display: table-cell;
-      width: 50px;
-      height: 50px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center center;
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
     }
 
-    .photo {
-      height: 100px;
-      width: 100px;
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .charger {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-left: 5px;
+    }
+
+    .has-charger {
+      background-color: green;
+    }
+
+    .no-charger {
+      background-color: red;
     }
   }
-}
 
-.photo {
-  height: 100px;
-  width: 100px;
+  /* StockComponent.scss */
+
+  /* Styles for the table */
+  .table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  thead th {
+    background-color: #f5f5f5;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Styles for mobile view */
+  .phone-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .photo-content {
+    margin-right: 10px;
+  }
+
+  .photo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+
+  .info {
+    flex: 1;
+  }
+
+  /* Styles for the modal */
+  .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .modal-content {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  /* Additional styling for the modal */
+  h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  table {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+
+  td {
+    padding: 10px;
+  }
+
+  /* Additional styling for the modal */
+  .modal-content td:first-child {
+    font-weight: bold;
+    width: 100px;
+  }
+
+  .modal-content td:nth-child(2) {
+    padding-left: 10px;
+  }
+
+  .modal-content td:last-child {
+    white-space: pre-wrap;
+  }
 }
