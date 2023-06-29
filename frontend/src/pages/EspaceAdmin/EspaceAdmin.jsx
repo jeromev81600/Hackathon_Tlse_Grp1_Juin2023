@@ -1,11 +1,11 @@
-import NavBar from "../../components/NavBar/NavBar";
+import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
 function EspaceAdmin() {
   return (
     <>
       <p>Espace Admin</p>
-      <NavBar />
+      <Navbar />
       <Footer />
     </>
   );

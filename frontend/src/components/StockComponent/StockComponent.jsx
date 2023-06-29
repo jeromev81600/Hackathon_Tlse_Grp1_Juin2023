@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { useMediaQuery } from "@material-ui/core";
-
 import "./StockComponent.scss";
 
 function StockPhones() {
   const [phones, setPhones] = useState([]);
-
+  const [selectedPhone, setSelectedPhone] = useState(null);
   const isLargeScreen = useMediaQuery("(min-width: 769px)");
 
   const fetchStockPhones = async () => {
@@ -50,6 +49,14 @@ function StockPhones() {
     fetchStockPhones();
   }, []);
 
+  const openModal = (phone) => {
+    setSelectedPhone(phone);
+  };
+
+  const closeModal = () => {
+    setSelectedPhone(null);
+  };
+
   return (
     <div className="table-container">
       {isLargeScreen ? (
@@ -62,6 +69,7 @@ function StockPhones() {
               <th>Prix</th>
               <th>Lieu</th>
               <th>Chargeur</th>
+              <th>Détails</th>
             </tr>
           </thead>
           <tbody>
@@ -77,6 +85,11 @@ function StockPhones() {
                     phone.has_charger ? "has-charger" : "no-charger"
                   }`}
                 />
+                <td>
+                  <button type="button" onClick={() => openModal(phone)}>
+                    Voir les détails
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -111,7 +124,43 @@ function StockPhones() {
           </ul>
         </div>
       )}
+
+      {selectedPhone && (
+        <div className="modal">
+          <div className="modal-content">
+            <button type="button" className="close" onClick={closeModal}>
+              &times;
+            </button>
+            <h2>Détails du Smartphone</h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td>ID:</td>
+                  <td>{selectedPhone.id}</td>
+                </tr>
+                <tr>
+                  <td>Marque:</td>
+                  <td>{selectedPhone.brand_name}</td>
+                </tr>
+                <tr>
+                  <td>Modèle:</td>
+                  <td>{selectedPhone.model_name}</td>
+                </tr>
+                <tr>
+                  <td>Prix:</td>
+                  <td>{selectedPhone.price}</td>
+                </tr>
+                <tr>
+                  <td>Lieu:</td>
+                  <td>{selectedPhone.factory}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+
 export default StockPhones;
