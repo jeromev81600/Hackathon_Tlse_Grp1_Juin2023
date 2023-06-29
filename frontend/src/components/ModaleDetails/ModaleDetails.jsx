@@ -26,7 +26,6 @@ function ModaleDetails() {
         const modelId = idResponse.data.id;
         phone.model_id = modelId;
 
-        // eslint-disable-next-line no-await-in-loop
         const userResponse = await axios.get(
           `${import.meta.env.VITE_BACKEND_URL}/user/${phone.user_id}`
         );
