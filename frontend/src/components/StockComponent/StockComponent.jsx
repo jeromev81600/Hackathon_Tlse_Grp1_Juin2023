@@ -3,6 +3,7 @@ import axios from "axios";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { useMediaQuery } from "@material-ui/core";
 import "./StockComponent.scss";
+// import ModaleDetails from "../ModaleDetails/ModaleDetails";
 
 function StockPhones() {
   const [phones, setPhones] = useState([]);
