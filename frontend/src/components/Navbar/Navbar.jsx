@@ -1,17 +1,29 @@
-import "./NavBar.scss";
+import "./Navbar.scss";
 import { useState } from "react";
 import logoEmmaus from "../../assets/image/logo-emmausconnect.svg";
 import logoprofil from "../../assets/image/icon-profile-circled.svg";
 import menuburger from "../../assets/image/icon-menu-burger.svg";
 import signout from "../../assets/image/icon-sign-out.svg";
+import iconhome from "../../assets/image/BTN-HOME-DESKTOP.svg";
 
-function NavBar() {
+function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="global-navbar">
-      <div className="logo-emmaus-navbar">
+      <div className="logo-emmaus-navbar" id="home">
         <img src={logoEmmaus} alt="logo-emmaus-connect" />
+      </div>
+      <div className="dekstop-navbar-icons">
+        <div className="icon-home-desktop-navbar">
+          <img src={iconhome} alt="avatar-profil-user" />
+        </div>
+        <div className="profil-navbar">
+          <img src={logoprofil} alt="avatar-profil-user" />
+        </div>
+      </div>
+      <div className="title-page">
+        <p>ACCUEIL</p>
       </div>
       <div className="profil-and-menu-burger">
         <div className="profil-navbar">
@@ -53,4 +65,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Navbar;

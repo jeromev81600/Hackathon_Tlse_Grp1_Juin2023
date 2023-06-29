@@ -16,6 +16,12 @@
       height: 90%;
     }
   }
+  .dekstop-navbar-icons {
+    display: none;
+  }
+  .title-page {
+    display: none;
+  }
   .profil-and-menu-burger {
     display: flex;
     justify-content: space-between;
@@ -131,19 +137,67 @@
     .sub-menu-blur {
       width: 100vw;
       height: 65vh;
-      background-color: var(--primaryBlack);
     }
   }
 }
 @media screen and (min-width: 769px) {
   .global-navbar {
-    .profil-and-menu-burger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 85px;
+    padding: 15px 0px 15px 0px;
+    border-bottom: 2px solid var(--primaryWhite);
+
+    .logo-emmaus-navbar {
+      display: none;
+    }
+    .dekstop-navbar-icons {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 20%;
+      height: 100%;
+      padding-left: 30px;
+      .icon-home-desktop-navbar {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        img {
+          height: 110%;
+        }
+      }
       .profil-navbar {
-        padding-right: 25px;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        img {
+          height: 90%;
+        }
       }
-      .menu-burger {
-        display: none;
+    }
+
+    .title-page {
+      display: flex;
+      background-color: var(--primaryYellow);
+      border-radius: 20px 0px 0px 20px;
+      align-items: center;
+      height: 100%;
+      width: 65%;
+      p {
+        color: var(--primaryWhite);
+        font-family: var(--fontFamilyTilte);
+        font-size: x-large;
+        font-weight: bolder;
+        padding-left: 20px;
       }
+    }
+    .profil-and-menu-burger {
+      display: none;
+    }
+    .main-sub-menu-burger {
+      display: none;
     }
   }
 }
