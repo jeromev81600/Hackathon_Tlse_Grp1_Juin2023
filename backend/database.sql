@@ -348,7 +348,7 @@ VALUES (
         1,
         1,
         500.00,
-        'https://example.com/phone_a.png'
+        'https://icons.veryicon.com/png/o/miscellaneous/bitisland-world/iphone-42.png'
     ), (
         2,
         1,
@@ -365,5 +365,5 @@ VALUES (
         2,
         2,
         800.00,
-        'https://example.com/phone_b.png'
+        "https://download.logo.wine/logo/Samsung/Samsung-Logo.wine.png"
     );
