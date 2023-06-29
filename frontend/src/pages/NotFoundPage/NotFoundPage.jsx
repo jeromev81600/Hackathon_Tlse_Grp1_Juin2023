@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import NavBar from "../../components/NavBar/NavBar";
+import NavBar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import "./NotFoundPage.scss";
 
