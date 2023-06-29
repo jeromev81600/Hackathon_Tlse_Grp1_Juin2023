@@ -88,18 +88,36 @@ CREATE TABLE
 
 -- -----------------------------------------------------
 
-INSERT INTO `hackathon2`.`brand` (brand, url_logo)
-VALUES 
-    ('Apple', 'https://www.1min30.com/wp-content/uploads/2019/02/Le-logo-Apple.jpg'),
-    ('Samsung', 'https://fr.vecteezy.com/png/19017544-logo-transparent-samsung-png'),
-    ('Huawei', 'https://fr.vecteezy.com/png/19909399-huawei-transparent-png-huawei-gratuit-png'),
-    ('Google', 'https://www.frandroid.com/marques/google/380882_g-pixel-phone-google-souhaite-changer-nom-de-futurs-smartphones'),
-    ('Xiaomi', 'https://fr.wikipedia.org/wiki/Xiaomi'),
-    ('Sony', 'https://www.pngwing.com/en/search?q=xperia+Logo'),
-    ('LG', 'https://fr.vecteezy.com/art-vectoriel/18911404-lg-logo-life-s-good-vecteur-editorial'),
-    ('Motorola', 'https://images.frandroid.com/wp-content/uploads/2013/06/motorola_logo.jpeg'),
-    ('Nokia', 'https://geekattitu.de/2014/06/18/en-2008-nokia-a-paye-une-rancon-de-plusieurs-millions-deuros-pour-proteger-symbian/');
- 
+INSERT INTO
+    `hackathon2`.`brand` (brand, url_logo)
+VALUES (
+        'Apple',
+        'https://www.1min30.com/wp-content/uploads/2019/02/Le-logo-Apple.jpg'
+    ), (
+        'Samsung',
+        'https://fr.vecteezy.com/png/19017544-logo-transparent-samsung-png'
+    ), (
+        'Huawei',
+        'https://fr.vecteezy.com/png/19909399-huawei-transparent-png-huawei-gratuit-png'
+    ), (
+        'Google',
+        'https://www.frandroid.com/marques/google/380882_g-pixel-phone-google-souhaite-changer-nom-de-futurs-smartphones'
+    ), (
+        'Xiaomi',
+        'https://fr.wikipedia.org/wiki/Xiaomi'
+    ), (
+        'Sony',
+        'https://www.pngwing.com/en/search?q=xperia+Logo'
+    ), (
+        'LG',
+        'https://fr.vecteezy.com/art-vectoriel/18911404-lg-logo-life-s-good-vecteur-editorial'
+    ), (
+        'Motorola',
+        'https://images.frandroid.com/wp-content/uploads/2013/06/motorola_logo.jpeg'
+    ), (
+        'Nokia',
+        'https://geekattitu.de/2014/06/18/en-2008-nokia-a-paye-une-rancon-de-plusieurs-millions-deuros-pour-proteger-symbian/'
+    );
 
 -- -----------------------------------------------------
 
@@ -277,7 +295,10 @@ INSERT INTO
         cost_weighting,
         state
     )
-VALUES (1, 10, 'State A'), (2, 20, 'State B'), (3, 30, 'State C');
+VALUES (1, 10, 'REPARABLE'), (2, 20, 'BLOQUE'), (
+        3,
+        30,
+        'RECONDITIONNE);
 
 -- -----------------------------------------------------
 
@@ -344,11 +365,11 @@ INSERT INTO
 VALUES (
         1,
         0,
-        '2023-06-28',
+        ' 2023 -06 -28 ',
         1,
         100,
         1,
-        '123456789012345',
+        ' 123456789012345 ',
         1,
         1,
         1,
@@ -357,15 +378,15 @@ VALUES (
         1,
         1,
         500.00,
-        'https://icons.veryicon.com/png/o/miscellaneous/bitisland-world/iphone-42.png'
+        ' https: / / icons.veryicon.com / png / o / miscellaneous / bitisland - world / iphone -42. png '
     ), (
         2,
         1,
-        '2023-06-28',
+        ' 2023 -06 -28 ',
         0,
         200,
         2,
-        '987654321098765',
+        ' 987654321098765 ',
         2,
         2,
         2,

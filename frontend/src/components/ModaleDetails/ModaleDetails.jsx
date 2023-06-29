@@ -25,10 +25,7 @@ function ModaleDetails() {
   console.info(smartphone, id);
   return (
     <div className="modal-phone-details">
-      <h2>{smartphone.brand}</h2>
-      <img src={smartphone.url_logo} alt={smartphone.brand} />
-
-      <h3>Model: {smartphone.model}</h3>
+      <h2>Model: {smartphone.model}</h2>
       <p>Operating System: {smartphone.operating_system}</p>
       <p>Screen: {smartphone.screen}</p>
       <p>Network: {smartphone.network}</p>
@@ -37,11 +34,6 @@ function ModaleDetails() {
       <p>Weighting: {smartphone.weighting}</p>
       <p>State: {smartphone.state}</p>
       <p>Price: {smartphone.price}</p>
-      <img
-        src={smartphone.url_phone}
-        alt={smartphone.brand}
-        className="imgPhone"
-      />
     </div>
   );
 }
