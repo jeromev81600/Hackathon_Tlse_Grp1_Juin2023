@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Input = styled.input`
+const inputDesktop = styled.input`
   display: block;
   padding: 0 0 0 1%;
   margin: 1%;
@@ -20,4 +20,4 @@ const Input = styled.input`
   }
 `;
 
-export default Input;
+export default inputDesktop;
