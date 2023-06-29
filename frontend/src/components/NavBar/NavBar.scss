@@ -1,0 +1,119 @@
+.global-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 85px;
+  padding: 15px;
+  border-bottom: 2px solid rgb(245, 245, 245);
+  .logo-emmaus-navbar {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    img {
+      height: 90%;
+    }
+  }
+  .profil-and-menu-burger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    margin-right: 10px;
+    height: 100%;
+    .profil-navbar {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      img {
+        height: 70%;
+      }
+    }
+    .menu-burger {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      img {
+        height: 70%;
+      }
+    }
+  }
+  .main-sub-menu-burger {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 85px;
+    z-index: 2;
+    .sub-menu-burger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 40vh;
+      width: 100vw;
+
+      background-color: white;
+      border-radius: 12px;
+      p {
+        margin-right: 20px;
+        color: white;
+        text-align: end;
+      }
+      .titles-sub-menu-burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-end;
+        gap: 20px;
+        margin: 10px 0px;
+        width: 80%;
+      }
+
+      .title-one-sub-menu-burger {
+        background-color: var(--primaryYellow);
+        border-radius: 20px 0 0 20px;
+        padding: 10px 5px;
+        width: 80%;
+      }
+      .title-two-sub-menu-burger {
+        background-color: var(--primaryViolet);
+        border-radius: 20px 0 0 20px;
+        padding: 10px 5px;
+        width: 65%;
+      }
+      .title-three-sub-menu-burger {
+        background-color: var(--primaryBlue);
+        border-radius: 20px 0 0 20px;
+        padding: 10px 5px;
+        width: 50%;
+      }
+    }
+    .deconnected-sub-menu-burger {
+      display: flex;
+      justify-content: center;
+      margin: 20px 5px 10px 0px;
+      gap: 20px;
+
+      .deconnected {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        img {
+          height: 80%;
+        }
+        p {
+          color: black;
+        }
+      }
+    }
+    .sub-menu-blur {
+      width: 100vw;
+      height: 65vh;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  }
+}

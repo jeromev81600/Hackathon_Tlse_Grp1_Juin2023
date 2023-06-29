@@ -17,7 +17,7 @@ CREATE TABLE
         `lastname` VARCHAR(45) NOT NULL,
         `email` VARCHAR(45) NOT NULL,
         `phone` VARCHAR(45) NULL,
-        `hashed_password` VARCHAR(45) NOT NULL,
+        `hashed_password` VARCHAR(255) NOT NULL,
         `is_admin` TINYINT(1) NOT NULL,
         `factory` VARCHAR(45) NOT NULL,
         PRIMARY KEY (`id`)
@@ -49,7 +49,7 @@ VALUES (
         'Antoine',
         'Julian',
         'Ante@wcs.com',
-        '',
+        '$argon2id$v=19$m=65536,t=5,p=1$lgQhMd6/YI8RXwZQrt1VMA$oBtHiEp7JSwbC+H8aVkORWC2ycR5fln8a2CrKvPT9pQ',
         1,
         'Toulouse'
     ), (

@@ -13,6 +13,15 @@ const NetworkControllers = require("./controllers/NetworkControllers");
 const BrandControllers = require("./controllers/BrandControllers");
 const ModelControllers = require("./controllers/ModelControllers");
 
+const {
+  //   hashPassword,
+  verifyPassword,
+  //   verifyToken,
+  //   verifyAdminRole,
+} = require("./services/auth");
+
+// ----------------------------------------- Login route -------------------------------------------
+router.post("/login", UserControllers.authenticationCheck, verifyPassword);
 // ----------------------------------------- Users routes -------------------------------------------
 
 router.get("/smartphone", SmartphoneControllers.browse);
