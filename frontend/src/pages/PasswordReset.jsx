@@ -1,10 +1,12 @@
-import Navbar from "../components/Navbar/Navbar";
+import NavBar from "../components/NavBar/NavBar";
+import Footer from "../components/Footer/Footer";
 
 export default function PasswordReset() {
   return (
     <>
       <p>Password Reset</p>
-      <Navbar />
+      <NavBar />
+      <Footer />
     </>
   );
 }

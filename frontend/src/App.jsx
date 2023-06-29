@@ -9,7 +9,7 @@ import Dashboard from "./pages/EspaceAdmin/EspaceAdmin";
 import "./App.scss";
 import "./reset.scss";
 
-export default function App() {
+function App() {
   return (
     <StateProvider>
       <AuthFunctionProvider>
@@ -25,3 +25,5 @@ export default function App() {
     </StateProvider>
   );
 }
+
+export default App;

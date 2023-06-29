@@ -1,10 +1,14 @@
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
 
-export default function Dashboard() {
+function EspaceAdmin() {
   return (
     <>
-      <p>Dashboard</p>
+      <p>Espace Admin</p>
       <Navbar />
+      <Footer />
     </>
   );
 }
+
+export default EspaceAdmin;
