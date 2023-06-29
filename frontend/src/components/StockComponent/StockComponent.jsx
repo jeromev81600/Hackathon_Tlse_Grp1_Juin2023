@@ -52,7 +52,11 @@ function StockPhones() {
           <li key={phone.id}>
             <div className="phone-card">
               <div className="photo-content">
-                <img className="photo" src={phone.url_phone} alt="model" />
+                <img
+                  className="photo"
+                  src={phone.brand_name.url_logo}
+                  alt="model"
+                />
               </div>
               <div className="info">
                 <p>Marque : {phone.brand_name}</p>
