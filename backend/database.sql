@@ -17,7 +17,7 @@ CREATE TABLE
         `lastname` VARCHAR(45) NOT NULL,
         `email` VARCHAR(45) NOT NULL,
         `phone` VARCHAR(45) NULL,
-        `hashed_password` VARCHAR(45) NOT NULL,
+        `hashed_password` VARCHAR(255) NOT NULL,
         `is_admin` TINYINT(1) NOT NULL,
         `factory` VARCHAR(45) NOT NULL,
         PRIMARY KEY (`id`)
@@ -49,7 +49,7 @@ VALUES (
         'Antoine',
         'Julian',
         'Ante@wcs.com',
-        '',
+        '$argon2id$v=19$m=65536,t=5,p=1$lgQhMd6/YI8RXwZQrt1VMA$oBtHiEp7JSwbC+H8aVkORWC2ycR5fln8a2CrKvPT9pQ',
         1,
         'Toulouse'
     ), (
@@ -134,6 +134,7 @@ CREATE TABLE
     IF NOT EXISTS `hackathon2`.`operating_system` (
         `id` INT NOT NULL AUTO_INCREMENT,
         `operating_system` VARCHAR(45) NOT NULL,
+        `cost_operating_system` INT NOT NULL,
         PRIMARY KEY (`id`)
     ) ENGINE = InnoDB;
 
@@ -144,8 +145,11 @@ CREATE TABLE
 -- -----------------------------------------------------
 
 INSERT INTO
-    `hackathon2`.`operating_system` (operating_system)
-VALUES ('OS A'), ('OS B'), ('OS C');
+    `hackathon2`.`operating_system` (
+        operating_system,
+        cost_operating_system
+    )
+VALUES ('Android 8', 20), ('Android 9', 25), ('Android 10', 30);
 
 -- -----------------------------------------------------
 
@@ -156,7 +160,8 @@ VALUES ('OS A'), ('OS B'), ('OS C');
 CREATE TABLE
     IF NOT EXISTS `hackathon2`.`screen` (
         `id` INT NOT NULL AUTO_INCREMENT,
-        `screen` VARCHAR(45) NULL,
+        `screen` VARCHAR(45) NOT NULL,
+        `cost_screen` INT NOT NULL,
         PRIMARY KEY (`id`)
     ) ENGINE = InnoDB;
 
@@ -167,8 +172,8 @@ CREATE TABLE
 -- -----------------------------------------------------
 
 INSERT INTO
-    `hackathon2`.`screen` (screen)
-VALUES ('Screen A'), ('Screen B'), ('Screen C');
+    `hackathon2`.`screen` (screen, cost_screen)
+VALUES ('HD', 30), ('Full HD', 40), ('Quad HD', 55), ('4K', 62);
 
 -- -----------------------------------------------------
 
@@ -180,6 +185,7 @@ CREATE TABLE
     IF NOT EXISTS `hackathon2`.`network` (
         `id` INT NOT NULL AUTO_INCREMENT,
         `network` INT NULL,
+        `cost_network` INT NOT NULL,
         PRIMARY KEY (`id`)
     ) ENGINE = InnoDB;
 
@@ -190,8 +196,8 @@ CREATE TABLE
 -- -----------------------------------------------------
 
 INSERT INTO
-    `hackathon2`.`network` (network)
-VALUES (3), (4), (5);
+    `hackathon2`.`network` (network, cost_network)
+VALUES (3, 30), (4, 40), (5, 55);
 
 -- -----------------------------------------------------
 
@@ -215,7 +221,7 @@ CREATE TABLE
 
 INSERT INTO
     `hackathon2`.`storage` (storage, cost_storage)
-VALUES (64, 100), (128, 200), (256, 300);
+VALUES (16, 31), (32, 45), (64, 66), (128, 85), (256, 100), (512, 115), (1000, 125);
 
 -- -----------------------------------------------------
 
@@ -239,7 +245,7 @@ CREATE TABLE
 
 INSERT INTO
     `hackathon2`.`ram` (ram, cost_ram)
-VALUES (4, 50), (8, 100), (16, 200);
+VALUES (1, 30), (2, 40), (3, 54), (4, 62), (6, 78), (8, 90), (12, 114), (16, 136);
 
 -- -----------------------------------------------------
 
@@ -288,7 +294,7 @@ CREATE TABLE
         `imei` VARCHAR(45) NULL,
         `model_id` INT NOT NULL,
         `operating_system_id` INT NOT NULL,
-        `sreen_id` INT NOT NULL,
+        `screen_id` INT NOT NULL,
         `network_id` INT NOT NULL,
         `storage_id` INT NOT NULL,
         `ram_id` INT NOT NULL,
@@ -296,24 +302,15 @@ CREATE TABLE
         `price` DECIMAL NOT NULL,
         `url_phone` VARCHAR(255) NULL,
         PRIMARY KEY (`id`, `user_id`),
-        INDEX `fk_telephone_user_idx` (`user_id` ASC) VISIBLE,
-        INDEX `fk_telephone_Brand1_idx` (`brand_id` ASC) VISIBLE,
-        INDEX `fk_telephone_Modem1_idx` (`model_id` ASC) VISIBLE,
-        INDEX `fk_telephone_operating_system1_idx` (`operating_system_id` ASC) VISIBLE,
-        INDEX `fk_telephone_ecran1_idx` (`sreen_id` ASC) VISIBLE,
-        INDEX `fk_telephone_reseau1_idx` (`network_id` ASC) VISIBLE,
-        INDEX `fk_telephone_storage1_idx` (`storage_id` ASC) VISIBLE,
-        INDEX `fk_telephone_ram1_idx` (`ram_id` ASC) VISIBLE,
-        INDEX `fk_telephone_weighting1_idx` (`weighting_id` ASC) VISIBLE,
-        CONSTRAINT `fk_telephone_user` FOREIGN KEY (`user_id`) REFERENCES `hackathon2`.`user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-        CONSTRAINT `fk_telephone_brand1` FOREIGN KEY (`brand_id`) REFERENCES `hackathon2`.`brand` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-        CONSTRAINT `fk_telephone_model` FOREIGN KEY (`model_id`) REFERENCES `hackathon2`.`model` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-        CONSTRAINT `fk_telephone_operating_system1` FOREIGN KEY (`operating_system_id`) REFERENCES `hackathon2`.`operating_system` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-        CONSTRAINT `fk_telephone_screen` FOREIGN KEY (`sreen_id`) REFERENCES `hackathon2`.`screen` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-        CONSTRAINT `fk_telephone_network` FOREIGN KEY (`network_id`) REFERENCES `hackathon2`.`network` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-        CONSTRAINT `fk_telephone_storage` FOREIGN KEY (`storage_id`) REFERENCES `hackathon2`.`storage` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-        CONSTRAINT `fk_telephone_ram` FOREIGN KEY (`ram_id`) REFERENCES `hackathon2`.`ram` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-        CONSTRAINT `fk_telephone_weighting` FOREIGN KEY (`weighting_id`) REFERENCES `hackathon2`.`weighting` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+        CONSTRAINT `fk_smartphone_user` FOREIGN KEY (`user_id`) REFERENCES `hackathon2`.`user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+        CONSTRAINT `fk_smartphone_brand` FOREIGN KEY (`brand_id`) REFERENCES `hackathon2`.`brand` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+        CONSTRAINT `fk_smartphone_model` FOREIGN KEY (`model_id`) REFERENCES `hackathon2`.`model` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+        CONSTRAINT `fk_smartphone_operating_system` FOREIGN KEY (`operating_system_id`) REFERENCES `hackathon2`.`operating_system` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+        CONSTRAINT `fk_smartphone_screen` FOREIGN KEY (`screen_id`) REFERENCES `hackathon2`.`screen` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+        CONSTRAINT `fk_smartphone_network` FOREIGN KEY (`network_id`) REFERENCES `hackathon2`.`network` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+        CONSTRAINT `fk_smartphone_storage` FOREIGN KEY (`storage_id`) REFERENCES `hackathon2`.`storage` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+        CONSTRAINT `fk_smartphone_ram` FOREIGN KEY (`ram_id`) REFERENCES `hackathon2`.`ram` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+        CONSTRAINT `fk_smartphone_weighting` FOREIGN KEY (`weighting_id`) REFERENCES `hackathon2`.`weighting` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
     ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -333,7 +330,7 @@ INSERT INTO
         imei,
         model_id,
         operating_system_id,
-        sreen_id,
+        screen_id,
         network_id,
         storage_id,
         ram_id,
@@ -357,7 +354,7 @@ VALUES (
         1,
         1,
         500.00,
-        'https://example.com/phone_a.png'
+        'https://icons.veryicon.com/png/o/miscellaneous/bitisland-world/iphone-42.png'
     ), (
         2,
         1,
@@ -374,5 +371,5 @@ VALUES (
         2,
         2,
         800.00,
-        'https://example.com/phone_b.png'
+        "https://download.logo.wine/logo/Samsung/Samsung-Logo.wine.png"
     );

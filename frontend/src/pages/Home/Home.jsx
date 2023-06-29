@@ -1,12 +1,20 @@
+import { useContext } from "react";
+import AuthFunctionContext from "../../contexts/AuthFunctionContext";
 import Footer from "../../components/Footer/Footer";
+
 import Navbar from "../../components/Navbar/Navbar";
 import "./Home.scss";
 import cardhomeadd from "../../assets/image/img-ajout-appareil.svg";
 import cardhomeview from "../../assets/image/img-acceder-bdd.svg";
 
-export default function Home() {
+function Home() {
+  const { userToken } = useContext(AuthFunctionContext);
+
+
   return (
-    <header className="App-header">
+    // (userInfo.is_admin === 0 || userInfo.is_admin === 1) &&
+    userToken && (
+    <div className="home">
       <Navbar />
       <main>
         <div className="container-big-button">
@@ -25,6 +33,10 @@ export default function Home() {
         </div>
       </main>
       <Footer />
-    </header>
-  );
+     </div>
+     );
+    );
+
 }
+
+export default Home;
