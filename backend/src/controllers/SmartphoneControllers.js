@@ -81,6 +81,21 @@ const destroy = (req, res) => {
       res.sendStatus(500);
     });
 };
+const smartphoneDetails = (req, res) => {
+  models.smartphone
+    .details(req.params.id)
+    .then(([smartphone]) => {
+      if (smartphone[0] == null) {
+        res.sendStatus(404);
+      } else {
+        res.send(smartphone[0]);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
 
 module.exports = {
   browse,
@@ -88,4 +103,5 @@ module.exports = {
   edit,
   add,
   destroy,
+  smartphoneDetails,
 };
