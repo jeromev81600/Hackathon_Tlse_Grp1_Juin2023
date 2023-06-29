@@ -1,0 +1,118 @@
+.headerCalculator-text {
+  display: flex;
+  margin-left: auto;
+  background-color: yellow;
+  border-radius: 34px 0 0 34px;
+  color: white;
+  font-size: x-large;
+  font-weight: bolder;
+  width: 250px;
+  height: 60px;
+  padding: 0 64px 0 0;
+  p {
+    font-family: var(--fontFamilyTitle);
+    margin: auto;
+  }
+}
+
+.Calculator_Txt {
+  font-family: var(--fontFamilyText);
+  font-size: 0.75em;
+  text-align: left;
+  width: 70%;
+  margin-top: 5%;
+}
+
+.calculator_box {
+  display: flex;
+  padding-top: 2%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  .DropdownForm {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin: 8% 5% 5% 5%;
+
+    .StyledLabel {
+      display: none;
+      list-style-type: none;
+      overflow: hidden;
+      height: 2em;
+      width: 80%;
+      background: white;
+      font-family: var(--fontFamilyText);
+      color: var(--formColorBlue);
+      border-radius: 5px;
+    }
+
+    .Styledselect {
+      display: flex;
+      font-family: var(--fontFamilyText);
+      background: white;
+      border-radius: 5px;
+      line-height: 1.5;
+      padding: 10px;
+      margin-bottom: 5%;
+      width: 80%;
+      z-index: 1;
+    }
+
+    .Title_forms {
+      width: 80%;
+      margin-bottom: 2%;
+      text-align: start;
+      font-family: var(--fontFamilyText);
+    }
+
+    .Star_color {
+      color: red;
+    }
+  }
+}
+
+/*
+  @media screen and (min-width: 700px) {
+    .DropDownContent{width: 74%;
+    margin-top: 28px;}
+  }
+
+
+.DropdownLi { display: flex;
+  width: 100%;}
+
+  .DropdownLi:hover{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.35rem;
+  }
+
+
+
+ 
+.StyledA{  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: var(--formColorLightGrey);
+  font-family: var(--fontFamilyText);
+  font-size: clamp(0.5rem, 1px, 3vw + 1rem, 0.5rem);
+  text-align: center;
+  text-decoration: none;} */
+
+@media screen and (min-width: 768px) {
+  .headerCalculator-text {
+    width: 900px;
+    height: 60px;
+    justify-content: left;
+    p {
+      margin: auto auto auto 4rem;
+      font-size: 40px;
+    }
+  }
+}

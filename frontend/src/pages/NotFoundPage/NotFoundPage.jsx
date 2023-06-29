@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import NavBar from "../../components/NavBar/NavBar";
+import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import "./NotFoundPage.scss";
 
 export default function NotFoundPage() {
   return (
     <>
-      <NavBar />
+      <Navbar />
       <div className="header-text">
         <p>Ooops ...</p>
       </div>

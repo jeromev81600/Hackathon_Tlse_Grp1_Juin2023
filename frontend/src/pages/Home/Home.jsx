@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import AuthFunctionContext from "../../contexts/AuthFunctionContext";
 import Footer from "../../components/Footer/Footer";
-import NavBar from "../../components/NavBar/NavBar";
+import Navbar from "../../components/Navbar/Navbar";
 import "./Home.scss";
 
 function Home() {
@@ -11,7 +11,7 @@ function Home() {
     // (userInfo.is_admin === 0 || userInfo.is_admin === 1) &&
     userToken && (
       <div className="home">
-        <NavBar />
+        <Navbar />
         <Footer />
       </div>
     )

@@ -1,11 +1,11 @@
-import "./NavBar.scss";
+import "./Navbar.scss";
 import { useState } from "react";
 import logoEmmaus from "../../assets/image/logo-emmausconnect.svg";
 import logoprofil from "../../assets/image/icon-profile-circled.svg";
 import menuburger from "../../assets/image/icon-menu-burger.svg";
 import signout from "../../assets/image/icon-sign-out.svg";
 
-function NavBar() {
+function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -53,4 +53,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Navbar;
