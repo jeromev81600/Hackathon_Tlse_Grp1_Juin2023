@@ -1,0 +1,80 @@
+.headerStock-text {
+  display: flex;
+  margin: 5% 0 8% 10%;
+  background-color: var(--primaryViolet);
+  border-radius: 34px 0 0 34px;
+  color: white;
+  font-size: x-large;
+  font-weight: bolder;
+  width: 100%;
+  height: 60px;
+  padding: 0 64px 0 0;
+  p {
+    display: flex;
+    font-family: var(--fontFamilyTitle);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.Box_button {
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+
+  .Filters_button {
+    border: 1px solid black;
+    border-radius: 56px;
+    background-color: white;
+    padding: 2% 4% 2% 4%;
+    font-family: var(--fontFamilyText);
+  }
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Additional styling for the modal */
+h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .Box_button {
+    display: none;
+  }
+
+  .StockRenderDesktop {
+    display: flex;
+    justify-content: space-between;
+  }
+}

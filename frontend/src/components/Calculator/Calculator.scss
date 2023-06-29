@@ -76,35 +76,6 @@
   }
 }
 
-/*
-  @media screen and (min-width: 700px) {
-    .DropDownContent{width: 74%;
-    margin-top: 28px;}
-  }
-
-
-.DropdownLi { display: flex;
-  width: 100%;}
-
-  .DropdownLi:hover{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 0.35rem;
-  }
-
-
-
- 
-.StyledA{  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  color: var(--formColorLightGrey);
-  font-family: var(--fontFamilyText);
-  font-size: clamp(0.5rem, 1px, 3vw + 1rem, 0.5rem);
-  text-align: center;
-  text-decoration: none;} */
-
 @media screen and (min-width: 768px) {
   .headerCalculator-text {
     width: 900px;
