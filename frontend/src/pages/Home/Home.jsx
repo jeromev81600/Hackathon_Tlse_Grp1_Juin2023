@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import AuthFunctionContext from "../../contexts/AuthFunctionContext";
 import Footer from "../../components/Footer/Footer";
-import NavBar from "../../components/NavBar/Navbar";
+import NavBar from "../../components/NavBar/NavBar";
 import "./Home.scss";
 
 function Home() {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./StockComponent.scss";
+import ModaleDetails from "../ModaleDetails/ModaleDetails";
 
 function StockPhones() {
   const [phones, setPhones] = useState([]);
@@ -69,6 +70,7 @@ function StockPhones() {
           </li>
         ))}
       </ul>
+      <ModaleDetails />
     </div>
   );
 }
