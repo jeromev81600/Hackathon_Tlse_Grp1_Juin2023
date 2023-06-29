@@ -7,27 +7,29 @@ function StockPhones() {
 
   const fetchStockPhones = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/smartphone");
+      const response = await axios.get(
+        `${import.meta.env.VITE_BACKEND_URL}/smartphone`
+      );
       const fetchedPhones = response.data;
 
       for (const phone of fetchedPhones) {
         // eslint-disable-next-line no-await-in-loop
         const brandResponse = await axios.get(
-          `http://localhost:5000/brand/${phone.brand_id}`
+          `${import.meta.env.VITE_BACKEND_URL}/brand/${phone.brand_id}`
         );
         const brandName = brandResponse.data.brand;
         phone.brand_name = brandName;
 
         // eslint-disable-next-line no-await-in-loop
         const modelResponse = await axios.get(
-          `http://localhost:5000/model/${phone.model_id}`
+          `${import.meta.env.VITE_BACKEND_URL}/model/${phone.model_id}`
         );
         const modelName = modelResponse.data.model;
         phone.model_name = modelName;
 
         // eslint-disable-next-line no-await-in-loop
         const userResponse = await axios.get(
-          `http://localhost:5000/user/${phone.user_id}`
+          `${import.meta.env.VITE_BACKEND_URL}/user/${phone.user_id}`
         );
         const factoryName = userResponse.data.factory;
         phone.factory = factoryName;
@@ -46,7 +48,6 @@ function StockPhones() {
   return (
     <div>
       <ul>
-        A
         {phones.map((phone) => (
           <li key={phone.id}>
             <div className="phone-card">

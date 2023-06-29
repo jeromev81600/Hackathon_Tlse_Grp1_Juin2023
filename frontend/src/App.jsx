@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { StateProvider } from "./contexts/StateContext";
 import { AuthFunctionProvider } from "./contexts/AuthFunctionContext";
-
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import PasswordReset from "./pages/PasswordReset";
@@ -22,6 +21,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/reset" element={<PasswordReset />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/stock" element={<StockPhones />} />
           </Routes>
         </Router>
       </AuthFunctionProvider>
