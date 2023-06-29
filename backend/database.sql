@@ -145,7 +145,10 @@ CREATE TABLE
 -- -----------------------------------------------------
 
 INSERT INTO
-    `hackathon2`.`operating_system` (operating_system)
+    `hackathon2`.`operating_system` (
+        operating_system,
+        cost_operating_system
+    )
 VALUES ('Android 8', 20), ('Android 9', 25), ('Android 10', 30);
 
 -- -----------------------------------------------------
@@ -157,7 +160,7 @@ VALUES ('Android 8', 20), ('Android 9', 25), ('Android 10', 30);
 CREATE TABLE
     IF NOT EXISTS `hackathon2`.`screen` (
         `id` INT NOT NULL AUTO_INCREMENT,
-        `screen` VARCHAR(45) NULL,
+        `screen` VARCHAR(45) NOT NULL,
         `cost_screen` INT NOT NULL,
         PRIMARY KEY (`id`)
     ) ENGINE = InnoDB;
@@ -169,7 +172,7 @@ CREATE TABLE
 -- -----------------------------------------------------
 
 INSERT INTO
-    `hackathon2`.`screen` (screen)
+    `hackathon2`.`screen` (screen, cost_screen)
 VALUES ('HD', 30), ('Full HD', 40), ('Quad HD', 55), ('4K', 62);
 
 -- -----------------------------------------------------
@@ -193,7 +196,7 @@ CREATE TABLE
 -- -----------------------------------------------------
 
 INSERT INTO
-    `hackathon2`.`network` (network)
+    `hackathon2`.`network` (network, cost_network)
 VALUES (3, 30), (4, 40), (5, 55);
 
 -- -----------------------------------------------------
