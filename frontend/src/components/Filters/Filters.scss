@@ -1,6 +1,44 @@
+.Filters_Container {
+  display: flex;
+  border-radius: 0 5px 0 5px;
+
+  .Filters_form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .Filters-title {
+    text-align: center;
+    margin-bottom: 3%;
+    font-family: var(--fontFamilyTitle);
+  }
+
+  .Filter_label {
+    width: 100%;
+    margin: 2%;
+  }
+
+  .Filter_select {
+    background-color: transparent;
+    color: var(--formColorBlue);
+    font-family: var(--fontFamilyTitle);
+    font-weight: 100;
+    border: none;
+    font-size: 0.8em;
+    width: 100%;
+    padding: 5%;
+    margin: 2%;
+    border-bottom: 0.5px solid var(--formColorBlue);
+  }
+}
+
 @media screen and (min-width: 768px) {
   .Filters_Container {
     background-color: var(--primaryYellow);
     padding: 10%;
+    .Filters_form {
+      width: 20vw;
+    }
   }
 }
